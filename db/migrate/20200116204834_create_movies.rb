@@ -7,7 +7,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :name
       t.string :rating
-      t.string :runtine
+      t.string :runtime
 
       t.timestamps
     end

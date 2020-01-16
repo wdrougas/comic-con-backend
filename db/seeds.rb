@@ -9,15 +9,16 @@
 
 require 'rest-client' 
 
+
 Movie.destroy_all
 
-rm = RestClient.get('https://comicvine.gamespot.com/api/movies/?api_key=1bc3aaafa2e58de60dce5a3f1b73c8f995e8b254&format=json&limit=200')
+movies = RestClient.get('https://comicvine.gamespot.com/api/movies/?api_key=1bc3aaafa2e58de60dce5a3f1b73c8f995e8b254&format=json&limit=200')
 
-movie_array = JSON.parse(rm)["results"] 
+movie_array = JSON.parse(movies)["results"] 
 
-# byebug
+
 movie_array.each do |movie|
-    byebug 
+    
     Movie.create(
         budget: movie["budget"],
         image_url: movie["image"]["medium_url"],
@@ -27,4 +28,5 @@ movie_array.each do |movie|
         rating: movie["rating"],
         runtime: movie["runtime"]
     )
+
 end 
