@@ -17,8 +17,8 @@ movie_array = JSON.parse(rm)["results"]
 
 # byebug
 movie_array.each do |movie|
+    byebug 
     Movie.create(
-        byebug
         budget: movie["budget"],
         image_url: movie["image"]["medium_url"],
         box_office_revenue:movie["box_office_revenue"] ,
