@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_16_205250) do
     t.string "description"
     t.string "name"
     t.string "rating"
-    t.string "runtime"
+    t.string "rutime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
