@@ -5,6 +5,8 @@ class UsersController < ApplicationController
         render json: users.to_json(serialize_data)
     end 
 
+
+
     
     private
 
