@@ -8,7 +8,12 @@ class FavoritesController < ApplicationController
   
     def create 
         favorite = Favorite.create(strong_params)
-        render json:favorite.to_json(serialized_data)
+        if favorite.valid? 
+        #  render json: favorite.to_json(serialized_data)
+        render json: {message: "Movie added to favorites!"}
+         else 
+        render json: {status: 'error', code: 4000, message: "Movie already added to favorites"}
+         end
     end 
   
     private 
