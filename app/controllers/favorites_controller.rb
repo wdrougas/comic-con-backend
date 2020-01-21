@@ -10,9 +10,9 @@ class FavoritesController < ApplicationController
         favorite = Favorite.create(strong_params)
         if favorite.valid? 
         #  render json: favorite.to_json(serialized_data)
-        render json: {message: "Movie added to favorites!"}
+        render json: {message: "Movie added to favorites!", movie: favorite.to_json(serialized_data)}
          else 
-        render json: {status: 'error', code: 4000, message: "Movie already added to favorites"}
+        render json: { message: "Movie already added to favorites"}
          end
     end 
   
