@@ -5,9 +5,13 @@ class UsersController < ApplicationController
         render json: users.to_json(serialize_data)
     end 
 
-
-
     
+    def show
+        user = User.find(params[:id])
+        render json: user.to_json(serialize_data)
+    end
+   
+
     private
 
     def serialize_data
@@ -19,5 +23,7 @@ class UsersController < ApplicationController
                 }
             }}
     end 
+
+
 
 end
